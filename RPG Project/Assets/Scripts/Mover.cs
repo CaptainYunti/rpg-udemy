@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,32 @@ public class Mover : MonoBehaviour
 {
 
     [SerializeField] Transform target;
+    NavMeshAgent navMesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        navMesh = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<NavMeshAgent>().SetDestination(target.position);
+        if(Input.GetMouseButtonDown(0))
+        {
+            MoveToCursor();
+        }
+
+    }
+
+    private void MoveToCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit))
+        {
+            navMesh.destination = hit.point;
+        }
+
     }
 }

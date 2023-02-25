@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8111663451548374552}
   - component: {fileID: 923698700345379590}
   - component: {fileID: 783871314}
+  - component: {fileID: 2334456068310845320}
   - component: {fileID: 783871315}
   - component: {fileID: 915878649953655273}
   m_Layer: 0
@@ -91,6 +92,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &2334456068310845320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905686171928386450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ff183dc276c21419ad06f83803aa3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &783871315
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -115,7 +128,7 @@ NavMeshAgent:
   m_ObstacleAvoidanceType: 4
 --- !u!95 &915878649953655273
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,7 +145,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &3497141392915445667
 PrefabInstance:
   m_ObjectHideFlags: 0

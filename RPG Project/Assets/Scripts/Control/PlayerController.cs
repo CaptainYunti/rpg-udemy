@@ -2,32 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+using RPG.Movement;
+
+namespace RPG.Control
 {
-
-    Mover mover;
-
-    private void Start()
+    public class PlayerController : MonoBehaviour
     {
-        mover = GetComponent<Mover>();
-    }
 
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
+        Mover mover;
+
+        private void Start()
         {
-            MoveToCursor();
-        }
-    }
-
-    private void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            mover.MoveTo(hit.point);
+            mover = GetComponent<Mover>();
         }
 
+        private void Update()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                MoveToCursor();
+            }
+        }
+
+        private void MoveToCursor()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                mover.MoveTo(hit.point);
+            }
+
+        }
     }
 }
